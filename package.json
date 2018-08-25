@@ -1,0 +1,45 @@
+{
+  "name": "fcc-exercise-tracker",
+  "version": "0.1.0",
+  "description": "Exercise tracker API for freeCodeCamp",
+  "main": "server.js",
+  "private": true,
+  "directories": {
+    "test": "tests"
+  },
+  "dependencies": {
+    "cors": "^2.8.4",
+    "dotenv": "^6.0.0",
+    "express": "^4.16.3",
+    "mongoose": "^5.2.9",
+    "morgan": "^1.9.0",
+    "pug": "^2.0.3"
+  },
+  "devDependencies": {
+    "eslint": "^5.4.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "jest": "^23.5.0",
+    "nodemon": "^1.18.3",
+    "supertest": "^3.1.0"
+  },
+  "engines": {
+    "node": "8.10.0"
+  },
+  "scripts": {
+    "dev": "NODE_ENV=development nodemon -r dotenv/config server.js",
+    "start": "NODE_ENV=production node -r dotenv/config server.js",
+    "test": "NODE_ENV=test node -r dotenv/config ./node_modules/.bin/jest"
+  },
+  "keywords": [],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zsoltime/fcc-api-exercise-tracker.git"
+  },
+  "author": "Zsolt Meszaros",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zsoltime/fcc-api-exercise-tracker/issues"
+  },
+  "homepage": "https://github.com/zsoltime/fcc-api-exercise-tracker#readme"
+}

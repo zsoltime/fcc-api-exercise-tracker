@@ -1,0 +1,9 @@
+extends _layout.pug
+block content
+  include _header.pug
+  main.wrapper
+    .error
+      p Oops! We can't find the page you requested, sorry...
+      img(src='/images/404.svg' width='256px')
+      p You can start over again at the #[a(href='/') documentation page].
+  include _footer.pug

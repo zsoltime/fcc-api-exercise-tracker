@@ -1,0 +1,35 @@
+extends _layout.pug
+block content
+  include _header.pug
+
+  main.wrapper.wrapper--no-bottom
+    section#intro
+      p Exercise tracker is an API built for #[a(href='https://learn.freecodecamp.org/apis-and-microservices/apis-and-microservices-projects/exercise-tracker', target='_blank') freeCodeCamp].
+
+    section#user-stories
+      h3 User Stories
+      blockquote
+        ul.stories
+          li.stories__item <input class="stories__checkbox" type="checkbox" disabled> I can create a user by posting form data <code>username</code> to <code>/api/exercise/new-user</code> and returned will be an object with <code>username</code> and <code>_id</code>.
+          li.stories__item <input class="stories__checkbox" type="checkbox" disabled> I can get an array of all users by getting <code>/api/exercise/users</code> with the same info as when creating a user.
+          li.stories__item <input class="stories__checkbox" type="checkbox" disabled> I can add an exercise to any user by posting form data <code>userId(_id)</code>, <code>description</code>, <code>duration</code>, and optionally <code>date</code> to <code>/api/exercise/add</code>. If no date supplied it will use current date. Returned will be the user object with the exercise fields added.
+          li.stories__item <input class="stories__checkbox" type="checkbox" disabled> I can retrieve a full exercise log of any user by getting <code>/api/exercise/log</code> with a parameter of <code>userId(_id)</code>. Return will be the user object with added array <code>log</code> and <code>count</code> (total exercise count).
+          li.stories__item <input class="stories__checkbox" type="checkbox" disabled> I can retrieve part of the log of any user by also passing along optional parameters of <code>from</code> & <code>to</code> or <code>limit</code>. (Date format <code>yyyy-mm-dd</code>, limit = <code>int</code>)
+
+    section#usage
+      h3 Example Usage
+      p <code>// TODO</code>
+
+    section#live
+      h3 Try It Live
+      p You can even try it live below.
+      <code>// TODO</code>
+
+    section#notes
+      h3 Notes
+      p The example above uses the #[a(href='https://developer.mozilla.org/en/docs/Web/API/Fetch_API', target='_blank') fetch() API] to get the results via AJAX requests. It works in Chrome 42+, FireFox 39+, Safari 10+, Opera 29+, and Edge 14+ only; IE is not supported.
+      p The live preview won't work for you in Internet Explorer or really old browsers; however, you can still try the API directly.
+      p The GitHub repo is available here: #[a(href='https://github.com/zsoltime/fcc-api-exercise-tracker') Exercise Tracker]
+
+  include _footer.pug
+  script(src='app.js')
