@@ -3,10 +3,10 @@
 const mongoose = require('mongoose');
 
 const exerciseSchema = mongoose.Schema({
-  userId: {
+  user: {
     type: mongoose.Schema.Types.ObjectId,
     required: true,
-    ref: 'Users',
+    ref: 'User',
     index: true,
     trim: true,
   },

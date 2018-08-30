@@ -11,7 +11,7 @@ describe('Exercise model', () => {
 
     exercise.validate().catch((err) => {
       expect(Object.keys(err.errors).length).toBe(1);
-      expect(err.errors).toHaveProperty('userId');
+      expect(err.errors).toHaveProperty('user');
       done();
     });
   });
@@ -20,12 +20,12 @@ describe('Exercise model', () => {
     const exercise = new Exercise({
       description: 'test',
       duration: 1,
-      userId: 'invalid ID',
+      user: 'invalid ID',
     });
 
     exercise.validate().catch((err) => {
       expect(Object.keys(err.errors).length).toBe(1);
-      expect(err.errors).toHaveProperty('userId');
+      expect(err.errors).toHaveProperty('user');
       done();
     });
   });
@@ -34,7 +34,7 @@ describe('Exercise model', () => {
     const exercise = new Exercise({
       description: '12',
       duration: 1,
-      userId: '5ad06b68db71e8a38f518470',
+      user: '5ad06b68db71e8a38f518470',
     });
 
     exercise.validate().catch((err) => {
@@ -48,7 +48,7 @@ describe('Exercise model', () => {
     const exercise = new Exercise({
       description: '0123456789'.repeat(15),
       duration: 1,
-      userId: '5ad06b68db71e8a38f518470',
+      user: '5ad06b68db71e8a38f518470',
     });
 
     exercise.validate().catch((err) => {
@@ -61,7 +61,7 @@ describe('Exercise model', () => {
   it('should return an error if duration is empty', (done) => {
     const exercise = new Exercise({
       description: 'test',
-      userId: '5ad06b68db71e8a38f518470',
+      user: '5ad06b68db71e8a38f518470',
     });
 
     exercise.validate().catch((err) => {
