@@ -19,6 +19,9 @@ mongoose.connect(
   db,
   { useNewUrlParser: true }
 );
+
+mongoose.set('useCreateIndex', true);
+
 mongoose.connection.on('error', () => {
   throw new Error(`Unable to connect to database: ${db}`);
 });
