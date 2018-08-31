@@ -2,16 +2,12 @@
 
 const User = require('../models/User');
 
-module.exports.create = (req, res, next) => {
-  User.create({ username: req.body.username }).then(
-    savedUser => res.json(savedUser),
-    err => next(err)
-  );
+module.exports.create = async (req, res, next) => {
+  const user = await User.create({ username: req.body.username }).catch(next);
+  return res.json(user);
 };
 
-module.exports.list = (req, res, next) => {
-  User.find({}, { __v: false, log: false }).then(
-    users => res.json(users),
-    err => next(err)
-  );
+module.exports.list = async (req, res, next) => {
+  const users = await User.find({}, { __v: false, log: false }).catch(next);
+  return res.json(users);
 };
