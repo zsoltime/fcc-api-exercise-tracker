@@ -12,6 +12,4 @@ describe('User model', () => {
       done();
     });
   });
-
-  it.skip('should return an error if username already exists', f => f);
 });
